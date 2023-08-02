@@ -6,7 +6,9 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build",
+    "build:reader": "nest build databasems",
+    "build:writer": "nest build oauth",
+    "build": "nest build && nest build databasems && nest build oauth",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -20,9 +22,7 @@
     "test:e2e": "jest --config ./apps/databasems/test/jest-e2e.json",
     "typeorm": "typeorm-ts-node-commonjs",
     "migrations:generate": "npm run typeorm -- migration:generate init",
-    "migrations:run": "npm run typeorm -- migration:run",
-    "build-ci": "ng build --prod && ng build databasems && ng build oauth",
-    "start-app": "node dist/apps/databasems/main.js && node dist/apps/oauth/main.js"
+    "migrations:run": "npm run typeorm -- migration:run"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
