@@ -9,7 +9,7 @@ async function bootstrap() {
       methods: ['POST', 'PUT', 'DELETE', 'GET']
     }
   );
-
-  await app.listen(3001);
+  
+  await app.listen(3001,'0.0.0.0');
 }
 bootstrap();
