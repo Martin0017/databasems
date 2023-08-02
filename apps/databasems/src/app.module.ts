@@ -12,9 +12,20 @@ import { Empresa } from './entities/enterprise.entity';
 import { Registro } from './entities/register.entity';
 import { Premio } from './entities/reward.entity';
 import { Usuario } from './entities/user.entity';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
+
 
 @Module({
   imports: [
+
+    ConfigModule.forRoot(),
+  ServeStaticModule.forRoot({
+    rootPath: join(__dirname, '..', 'databasems'),
+    exclude: [],
+  }),
+
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'powefitdatabase-do-user-14057935-0.b.db.ondigitalocean.com',
