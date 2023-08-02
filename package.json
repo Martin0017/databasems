@@ -6,8 +6,8 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build:reader": "nest build databasems",
-    "build:writer": "nest build oauth",
+    "build:databasems": "nest build databasems",
+    "build:oauth": "nest build oauth",
     "build": "nest build && nest build databasems && nest build oauth",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
