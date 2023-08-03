@@ -1471,12 +1471,6 @@ exports.AdministratorController = AdministratorController = __decorate([
 ], AdministratorController);
 
 
-/***/ }),
-/* 30 */
-/***/ ((module) => {
-
-module.exports = require("fs");
-
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -1513,13 +1507,8 @@ var exports = __webpack_exports__;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core_1 = __webpack_require__(1);
 const app_module_1 = __webpack_require__(2);
-const fs = __webpack_require__(30);
-const httpsOptions = {
-    key: fs.readFileSync('/etc/nginx/ssl/nginx.key'),
-    cert: fs.readFileSync('/etc/nginx/ssl/nginx.crt'),
-};
 async function bootstrap() {
-    const app = await core_1.NestFactory.create(app_module_1.AppModule, { httpsOptions });
+    const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.enableCors({
         origin: true,
         methods: ['POST', 'PUT', 'DELETE', 'GET']

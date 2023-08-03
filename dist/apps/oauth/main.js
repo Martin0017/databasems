@@ -883,12 +883,6 @@ module.exports = require("@nestjs/serve-static");
 
 module.exports = require("path");
 
-/***/ }),
-/* 28 */
-/***/ ((module) => {
-
-module.exports = require("fs");
-
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -925,13 +919,8 @@ var exports = __webpack_exports__;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core_1 = __webpack_require__(1);
 const oauth_module_1 = __webpack_require__(2);
-const fs = __webpack_require__(28);
-const httpsOptions = {
-    key: fs.readFileSync('/etc/nginx/ssl/nginx.key'),
-    cert: fs.readFileSync('/etc/nginx/ssl/nginx.crt'),
-};
 async function bootstrap() {
-    const app = await core_1.NestFactory.create(oauth_module_1.OauthModule, { httpsOptions });
+    const app = await core_1.NestFactory.create(oauth_module_1.OauthModule);
     app.enableCors({
         origin: true,
         methods: ['POST', 'PUT', 'DELETE', 'GET']
