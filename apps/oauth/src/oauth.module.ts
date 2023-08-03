@@ -9,18 +9,10 @@ import { Registro } from 'apps/databasems/src/entities/register.entity';
 import { Premio } from 'apps/databasems/src/entities/reward.entity';
 import { Usuario } from 'apps/databasems/src/entities/user.entity';
 import { LoginModule } from './login/login.module';
-import { ConfigModule, ConfigService } from '@nestjs/config';
-import { ServeStaticModule } from '@nestjs/serve-static';
-import { join } from 'path';
+
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'oauth'),
-      exclude: [],
-    }),
-    
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'powefitdatabase-do-user-14057935-0.b.db.ondigitalocean.com',

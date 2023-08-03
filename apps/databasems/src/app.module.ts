@@ -12,9 +12,7 @@ import { Empresa } from './entities/enterprise.entity';
 import { Registro } from './entities/register.entity';
 import { Premio } from './entities/reward.entity';
 import { Usuario } from './entities/user.entity';
-import { ConfigModule, ConfigService } from '@nestjs/config';
-import { ServeStaticModule } from '@nestjs/serve-static';
-import { join } from 'path';
+
 
 
 @Module({

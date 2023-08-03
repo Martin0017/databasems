@@ -27,6 +27,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/oauth/tsconfig.app.json"
       }
+    },
+    "oauthmobile": {
+      "type": "application",
+      "root": "apps/oauthmobile",
+      "entryFile": "main",
+      "sourceRoot": "apps/oauthmobile/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/oauthmobile/tsconfig.app.json"
+      }
     }
   }
 }
