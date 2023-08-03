@@ -19,13 +19,6 @@ import { join } from 'path';
 
 @Module({
   imports: [
-
-    ConfigModule.forRoot(),
-  ServeStaticModule.forRoot({
-    rootPath: join(__dirname, '..', 'databasems'),
-    exclude: [],
-  }),
-
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'powefitdatabase-do-user-14057935-0.b.db.ondigitalocean.com',
