@@ -8,7 +8,6 @@ export class LoginService {
     constructor(private usersService: AdministratorService, private jwtTokenService: JwtService){}
 
     async validateUserCredentials(body: any): Promise<any> {
-
         const user = await this.usersService.findOneAdminByMail(body.correo_admin);
 
         if (user && user.contrasena_admin === body.contrasena_admin) {

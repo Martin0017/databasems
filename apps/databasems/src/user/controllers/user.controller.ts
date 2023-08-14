@@ -17,6 +17,11 @@ export class UserController {
         return this.userService.findOne(id);
     }
 
+    @Post('search')
+    findByEmail(@Body() searchItemDto: any) {
+      return this.userService.findOneUserByMail(searchItemDto.correo_user);
+    }
+
     @Post()
     create(@Body() body: any){
         return this.userService.create(body);

@@ -36,6 +36,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/oauthmobile/tsconfig.app.json"
       }
+    },
+    "powerfitregisters": {
+      "type": "application",
+      "root": "apps/powerfitregisters",
+      "entryFile": "main",
+      "sourceRoot": "apps/powerfitregisters/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/powerfitregisters/tsconfig.app.json"
+      }
     }
   }
 }

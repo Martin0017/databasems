@@ -14,6 +14,7 @@ import { Usuario } from '../entities/user.entity';
     TypeOrmModule.forFeature([Actividad, Administrador, Empresa, Registro, Premio, Usuario])
   ],
   providers: [UserService],
-  controllers: [UserController]
+  controllers: [UserController],
+  exports: [UserService],
 })
 export class UserModule {}

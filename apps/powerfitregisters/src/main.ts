@@ -1,14 +1,14 @@
 import { NestFactory } from '@nestjs/core';
-import { OauthmobileModule } from './oauthmobile.module';
+import { PowerfitregistersModule } from './powerfitregisters.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(OauthmobileModule);
+  const app = await NestFactory.create(PowerfitregistersModule);
   app.enableCors(
     { 
       origin: true,
       methods: ['POST', 'PUT', 'DELETE', 'GET']
     }
   );
-  await app.listen(3003,'0.0.0.0');
+  await app.listen(3004,'0.0.0.0');
 }
 bootstrap();
