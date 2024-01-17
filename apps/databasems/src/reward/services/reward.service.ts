@@ -14,18 +14,19 @@ export class RewardService {
         return this.reward_repo.find();
     }
 
-    findOne(id: string) {
+    findOne(id: number) {
         return this.reward_repo.findOne(
             { where: { id_pre: id}}
         );
     }
 
     create(body: any) {
+        console.log(body);
         const newAdministrator = this.reward_repo.create(body);
         return this.reward_repo.save(newAdministrator);
     }
 
-    async update(id: string, body:any) {
+    async update(id: number, body:any) {
         const administrator = await this.reward_repo.findOne(
             { where: { id_pre: id}}
         );
@@ -34,7 +35,7 @@ export class RewardService {
     }
 
 
-    async delete(id: string) {
+    async delete(id: number) {
         await this.reward_repo.delete(id);
         return true;
     }

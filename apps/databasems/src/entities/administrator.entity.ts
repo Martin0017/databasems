@@ -5,7 +5,7 @@ import { Empresa } from '../entities/enterprise.entity';
 @Entity()
 export class Administrador {
     @PrimaryGeneratedColumn()
-    id_admin: string;
+    id_admin: number;
 
     @OneToMany(() => Usuario, (usuario) => usuario.id_admin)
     id_user: Usuario[];

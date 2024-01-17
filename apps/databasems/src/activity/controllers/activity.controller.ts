@@ -13,7 +13,7 @@ export class ActivityController {
     }
 
     @Get(':id')
-    getOne(@Param('id') id: string){
+    getOne(@Param('id') id: number){
         return this.activityService.findOne(id);
     }
 
@@ -23,12 +23,12 @@ export class ActivityController {
     }
 
     @Put(':id')
-    update(@Param('id') id: string, @Body() body:any){
+    update(@Param('id') id: number, @Body() body:any){
         return this.activityService.update(id,body);
     }
 
     @Delete(':id')
-    delete(@Param('id') id: string){
+    delete(@Param('id') id: number){
         return this.activityService.delete(id);
     }
 }

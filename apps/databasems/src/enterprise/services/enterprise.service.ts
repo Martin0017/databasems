@@ -13,7 +13,7 @@ export class EnterpriseService {
         return this.enterprise_repo.find();
     }
 
-    findOne(id: string) {
+    findOne(id: number) {
         return this.enterprise_repo.findOne(
             { where: { id_emp: id}}
         );
@@ -24,7 +24,7 @@ export class EnterpriseService {
         return this.enterprise_repo.save(newAdministrator);
     }
 
-    async update(id: string, body:any) {
+    async update(id: number, body:any) {
         const administrator = await this.enterprise_repo.findOne(
             { where: { id_emp: id}}
         );
@@ -32,7 +32,7 @@ export class EnterpriseService {
         return this.enterprise_repo.save(administrator);
     }
 
-    async delete(id: string) {
+    async delete(id: number) {
         await this.enterprise_repo.delete(id);
         return true;
     }

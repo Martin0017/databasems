@@ -8,7 +8,7 @@
 /* Table: ACTIVIDAD                                             */
 /*==============================================================*/
 create table ACTIVIDAD (
-   ID_ACTI              CHAR(11)             not null,
+   ID_ACTI              SERIAL               not null,
    NOMBRE_ACTI          VARCHAR(25)          not null,
    DESCRIPCION_ACTI     TEXT                 not null,
    TIEMPO_ACTI          TIME                 not null,
@@ -29,7 +29,7 @@ ID_ACTI
 /* Table: ADMINISTRADOR                                         */
 /*==============================================================*/
 create table ADMINISTRADOR (
-   ID_ADMIN             CHAR(11)             not null,
+   ID_ADMIN             SERIAL           not null,
    ID_EMP               CHAR(11)             not null,
    NOMBRE_ADMIN         VARCHAR(25)          not null,
    APELLIDO_ADMIN       VARCHAR(25)          not null,
@@ -56,7 +56,7 @@ ID_EMP
 /* Table: EMPRESA                                               */
 /*==============================================================*/
 create table EMPRESA (
-   ID_EMP               CHAR(11)             not null,
+   ID_EMP               SERIAL               not null,
    NOMBRE_EMP           VARCHAR(25)          not null,
    DIRECCION_EMP        VARCHAR(50)          not null,
    TELEFONO_EMP         NUMERIC              not null,
@@ -74,7 +74,7 @@ ID_EMP
 /* Table: PREMIO                                                */
 /*==============================================================*/
 create table PREMIO (
-   ID_PRE               CHAR(11)             not null,
+   ID_PRE               SERIAL               not null,
    NOMBRE_PRE           VARCHAR(25)          not null,
    DESCRIPCION_PRE      TEXT                 not null,
    PUNTOS_RQ_PRE        NUMERIC(3)           not null,
@@ -93,7 +93,7 @@ ID_PRE
 /* Table: REGISTRO                                              */
 /*==============================================================*/
 create table REGISTRO (
-   ID_REG               CHAR(11)             not null,
+   ID_REG               SERIAL               not null,
    ID_ACTI              CHAR(11)             not null,
    ID_USER              CHAR(11)             not null,
    FECHA_HORA_REG       DATE                 not null,
@@ -128,7 +128,7 @@ ID_USER
 /* Table: USUARIO                                               */
 /*==============================================================*/
 create table USUARIO (
-   ID_USER              CHAR(11)             not null,
+   ID_USER              SERIAL               not null,
    ID_EMP               CHAR(11)             not null,
    ID_ADMIN             CHAR(11)             not null,
    NOMBRE_USER          VARCHAR(25)          not null,

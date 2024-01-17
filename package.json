@@ -21,8 +21,10 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./apps/databasems/test/jest-e2e.json",
     "typeorm": "typeorm-ts-node-commonjs",
-    "migrations:generate": "npm run typeorm -- migration:generate init",
-    "migrations:run": "npm run typeorm -- migration:run"
+    "migration:create": "cross-var ts-node node_modules/typeorm/cli.js migration:create ./apps/databasems/src/database/migrations/$npm_config_name",
+    "migrate": "ts-node node_modules/typeorm/cli.js migration:run -d /root/NEST/databasems/apps/databasems/src/datasource.ts",
+    "migrations:generate": "ts-node node_modules/.bin/typeorm migration:generate --config /root/NEST/databasems/apps/databasems/src/datasource.ts --name ",
+    "migrations:run": "ts-node node_modules/.bin/typeorm migration:run --config /root/NEST/databasems/apps/databasems/src/orm.config.json"
   },
   "dependencies": {
     "@nestjs/common": "^10.0.0",
@@ -34,7 +36,9 @@
     "@nestjs/passport": "^10.0.0",
     "@nestjs/platform-express": "^10.0.0",
     "@nestjs/serve-static": "^4.0.0",
-    "@nestjs/typeorm": "^10.0.0",
+    "@nestjs/swagger": "^7.2.0",
+    "@nestjs/typeorm": "^10.0.1",
+    "dotenv": "^16.3.1",
     "mongoose": "^7.4.3",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.1",
@@ -42,6 +46,7 @@
     "pg": "^8.11.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
+    "swagger-ui-express": "^5.0.0",
     "typeorm": "^0.3.17"
   },
   "devDependencies": {

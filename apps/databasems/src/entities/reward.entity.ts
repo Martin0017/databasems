@@ -3,7 +3,7 @@ import { Entity, Column, PrimaryGeneratedColumn, PrimaryColumn } from 'typeorm';
 @Entity()
 export class Premio {
     @PrimaryGeneratedColumn()
-    id_pre: string;
+    id_pre: number;
 
     @Column({ length: 25 })
     nombre_pre: string;

@@ -7,7 +7,7 @@ import { SupportmessageModule } from './supportmessage/supportmessage.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb+srv://powerfit:powerfit@powerfit.cdh2f1i.mongodb.net/?retryWrites=true&w=majority'),
+    MongooseModule.forRoot('mongodb+srv://admin1726:Disturber1726@powerfitlogs.ubnq4yr.mongodb.net/?retryWrites=true&w=majority'),
     PointsModule, UseractivityModule, ClaimedrewardsModule, SupportmessageModule],
   controllers: [],
   providers: [],

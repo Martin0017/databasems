@@ -4,7 +4,7 @@ import { Registro } from '../entities/register.entity';
 @Entity()
 export class Actividad {
     @PrimaryGeneratedColumn()
-    id_acti: string; 
+    id_acti: number; 
 
     @Column({ length: 25 })
     nombre_acti: string;

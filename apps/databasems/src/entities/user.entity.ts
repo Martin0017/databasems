@@ -6,7 +6,7 @@ import { Registro } from '../entities/register.entity';
 @Entity()
 export class Usuario {
     @PrimaryGeneratedColumn()
-    id_user: string;
+    id_user: number;
 
     @ManyToOne((type) => Empresa, (empresa) => empresa.id_user, {
         eager: true

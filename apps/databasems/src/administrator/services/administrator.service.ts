@@ -14,7 +14,7 @@ export class AdministratorService {
         return this.admin_repo.find();
     }
 
-    findOne(id: string) {
+    findOne(id: number) {
         return this.admin_repo.findOne(
             { where: { id_admin: id}}
         );
@@ -25,7 +25,7 @@ export class AdministratorService {
         return this.admin_repo.save(newAdministrator);
     }
 
-    async update(id: string, body:any) {
+    async update(id: number, body:any) {
         const administrator = await this.admin_repo.findOne(
             { where: { id_admin: id}}
         );
@@ -33,7 +33,7 @@ export class AdministratorService {
         return this.admin_repo.save(administrator);
     }
 
-    async delete(id: string) {
+    async delete(id: number) {
         await this.admin_repo.delete(id);
         return true;
     }

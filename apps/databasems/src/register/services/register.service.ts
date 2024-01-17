@@ -13,7 +13,7 @@ export class RegisterService {
         return this.register_repo.find();
     }
 
-    findOne(id: string) {
+    findOne(id: number) {
         return this.register_repo.findOne(
             { where: { id_reg: id}}
         );
@@ -24,7 +24,7 @@ export class RegisterService {
         return this.register_repo.save(newAdministrator);
     }
 
-    async update(id: string, body:any) {
+    async update(id: number, body:any) {
         const administrator = await this.register_repo.findOne(
             { where: { id_reg: id}}
         );
@@ -32,7 +32,7 @@ export class RegisterService {
         return this.register_repo.save(administrator);
     }
 
-    async delete(id: string) {
+    async delete(id: number) {
         await this.register_repo.delete(id);
         return true;
     }

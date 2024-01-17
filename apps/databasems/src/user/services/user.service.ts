@@ -14,7 +14,7 @@ export class UserService {
         return this.user_repo.find();
     }
 
-    findOne(id: string) {
+    findOne(id: number) {
         console.log("entro desde el apk");
         return this.user_repo.findOne(
             { where: { id_user: id}}
@@ -28,11 +28,12 @@ export class UserService {
     }
 
     create(body: any) {
+        console.log(body);
         const newAdministrator = this.user_repo.create(body);
         return this.user_repo.save(newAdministrator);
     }
 
-    async update(id: string, body:any) {
+    async update(id: number, body:any) {
         const administrator = await this.user_repo.findOne(
             { where: { id_user: id}}
         );
@@ -40,8 +41,12 @@ export class UserService {
         return this.user_repo.save(administrator);
     }
 
-    async delete(id: string) {
+    async delete(id: number) {
         await this.user_repo.delete(id);
         return true;
     }
+
+    async count(): Promise<number> {
+        return this.user_repo.count();
+      }
 }

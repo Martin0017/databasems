@@ -13,7 +13,7 @@ export class ActivityService {
         return this.activity_repo.find();
     }
 
-    findOne(id: string) {
+    findOne(id: number) {
         return this.activity_repo.findOne(
             { where: { id_acti: id}}
         );
@@ -24,7 +24,7 @@ export class ActivityService {
         return this.activity_repo.save(newAdministrator);
     }
 
-    async update(id: string, body:any) {
+    async update(id: number, body:any) {
         const administrator = await this.activity_repo.findOne(
             { where: { id_acti: id}}
         );
@@ -32,7 +32,7 @@ export class ActivityService {
         return this.activity_repo.save(administrator);
     }
 
-    async delete(id: string) {
+    async delete(id: number) {
         await this.activity_repo.delete(id);
         return true;
     }

@@ -5,7 +5,7 @@ import { Usuario } from '../entities/user.entity';
 @Entity()
 export class Empresa {
     @PrimaryGeneratedColumn()
-    id_emp: string;
+    id_emp: number;
 
     @Column({ length: 25 })
     nombre_emp: string;
