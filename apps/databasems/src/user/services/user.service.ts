@@ -15,7 +15,6 @@ export class UserService {
     }
 
     findOne(id: number) {
-        console.log("entro desde el apk");
         return this.user_repo.findOne(
             { where: { id_user: id}}
         );

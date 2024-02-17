@@ -32,6 +32,9 @@ export class Usuario {
     @Column({ length: 25 , default:""})
     contrasena_user: string;
 
+    @Column()
+    puntos: Number;
+
     @Column('date')
     fecha_nacimiento_user: Date;
 

@@ -8,6 +8,8 @@ export class LoginService {
     constructor(private usersService: UserService){}
 
     async validateUserCredentials(body: any): Promise<any> {
+
+        console.log(body);
         const user = await this.usersService.findOneUserByMail(body.correo_user);
 
         if (user && user.contrasena_user === body.contrasena_user) {

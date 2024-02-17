@@ -140,7 +140,6 @@ let UserService = exports.UserService = class UserService {
         return this.user_repo.find();
     }
     findOne(id) {
-        console.log("entro desde el apk");
         return this.user_repo.findOne({ where: { id_user: id } });
     }
     findOneUserByMail(correo) {
@@ -200,7 +199,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var _a, _b, _c;
+var _a, _b, _c, _d;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Usuario = void 0;
 const typeorm_1 = __webpack_require__(7);
@@ -244,8 +243,12 @@ __decorate([
     __metadata("design:type", String)
 ], Usuario.prototype, "contrasena_user", void 0);
 __decorate([
+    (0, typeorm_1.Column)(),
+    __metadata("design:type", typeof (_c = typeof Number !== "undefined" && Number) === "function" ? _c : Object)
+], Usuario.prototype, "puntos", void 0);
+__decorate([
     (0, typeorm_1.Column)('date'),
-    __metadata("design:type", typeof (_c = typeof Date !== "undefined" && Date) === "function" ? _c : Object)
+    __metadata("design:type", typeof (_d = typeof Date !== "undefined" && Date) === "function" ? _d : Object)
 ], Usuario.prototype, "fecha_nacimiento_user", void 0);
 __decorate([
     (0, typeorm_1.Column)({ length: 20 }),
@@ -1531,13 +1534,6 @@ module.exports = {
 "use strict";
 module.exports = require("@nestjs/swagger");
 
-/***/ }),
-/* 32 */
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("fs");
-
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -1576,14 +1572,8 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core_1 = __webpack_require__(1);
 const app_module_1 = __webpack_require__(2);
 const swagger_1 = __webpack_require__(31);
-const fs = __webpack_require__(32);
 async function bootstrap() {
-    const httpsOptions = {
-        key: fs.readFileSync('/root/NEST/databasems/server.key'),
-        cert: fs.readFileSync('/root/NEST/databasems/server.cert'),
-        rejectUnauthorized: false,
-    };
-    const app = await core_1.NestFactory.create(app_module_1.AppModule, { httpsOptions });
+    const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.enableCors({
         origin: true,
         methods: ['POST', 'PUT', 'DELETE', 'GET']
